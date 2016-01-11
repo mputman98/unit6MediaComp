@@ -78,13 +78,13 @@ public class IntArrayWorker
     /**
      *
      */
-    public int getColTotal(int x)
+    public int getColTotal(int col)
     {
-        int y = x;
+        
         int count = 0;
-        for (int col = 0;col < matrix[y].length; col++)
+        for (int row = 0;row < matrix.length; row++)
             {
-                count++;
+                count += matrix[row][col];
             }
         
         return count;    
