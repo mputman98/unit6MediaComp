@@ -25,6 +25,13 @@ public class PictureTester
         beach.explore();
     }
     
+    public static void testNegate()
+    {
+        Picture cookie = new Picture("pedro-sena-fatima-s-followers-by-lordigan-d95340t");
+        cookie.explore();
+        cookie.Negate();
+        cookie.explore();
+    }
     
     /** Method to test mirrorVertical */
     public static void testMirrorVertical()
@@ -90,15 +97,61 @@ public class PictureTester
         canvas.createCollage();
         canvas.explore();
     }
-
+    
+    public static void testmyCollage()
+    {
+        Picture canvas = new Picture(480,630);
+        canvas.myCollage();
+        canvas.explore();
+    }
+    
+    public static void testCopy(){
+        Picture snowman = new Picture("snowman.jpg");
+        Picture Seagull = new Picture("seagull.jpg");
+        snowman.explore();
+        snowman.copy(Seagull,40,20);
+        snowman.explore();
+    }
+    
+    public static void testcropAndCopy(){
+        Picture snowman = new Picture("snowman.jpg");
+        Picture Seagull = new Picture("seagull.jpg");
+        snowman.explore();
+        snowman.cropAndCopy(Seagull,40,150,60,230,80,150);
+        snowman.explore();
+    }
+    
     /** Method to test edgeDetection */
     public static void testEdgeDetection()
     {
         Picture swan = new Picture("swan.jpg");
+        swan.explore();
         swan.edgeDetection(10);
         swan.explore();
     }
-
+    
+    /** Method to test edgeDetection */
+    public static void testGrayscale()
+    {
+        Picture swan = new Picture("beach.jpg");
+        swan.grayscale();
+        swan.explore();
+    }
+    
+     public static void testfixBlue()
+    {
+        Picture water = new Picture("water.jpg");
+        water.fixBlue();
+        water.explore();
+    }
+    
+    public static void testfixBlue2()
+    {
+        Picture water = new Picture("water.jpg");
+        water.fixBlue2();
+        water.explore();
+    }
+    
     /** Main method for testing.  Every class can have a main
      * method in Java */
     public static void main(String[] args)
@@ -118,9 +171,9 @@ public class PictureTester
         testKeepOnlyBlue();
         //testKeepOnlyRed();
         //testKeepOnlyGreen();
-        //testNegate();
-        //testGrayscale();
-        //testFixUnderwater();
+        testGrayscale();
+        testfixBlue();
+        testfixBlue2();
         testMirrorVertical();
         testMirrorVerticalRightToLeft();
         testMirrorHorizontal();
@@ -128,10 +181,13 @@ public class PictureTester
         testMirrorTemple();
         testMirrorArms();
         testMirrorSeagull();
+        testNegate();
+        testmyCollage();
         //testMirrorDiagonal();
-        //testCollage();
-        //testCopy();
-        //testEdgeDetection();
+        testCollage();
+        testCopy();
+        testcropAndCopy();
+        testEdgeDetection();
         //testEdgeDetection2();
         //testChromakey();
         //testEncodeAndDecode();
